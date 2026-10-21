@@ -1,2 +1,11 @@
+# Secrets
 .env
+
+# Python
 __pycache__/
+.venv/
+venv/
+
+# Tools / editors
+.pytest_cache/
+.vscode/
