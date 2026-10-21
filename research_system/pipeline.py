@@ -1,4 +1,9 @@
-from research_system.agents import build_reader_agent, build_search_agent, writer_chain, critic_chain
+from .agents import (
+    build_reader_agent,
+    build_search_agent,
+    writer_chain,
+    critic_chain,
+)
 
 
 def run_research_pipeline(topic: str) -> dict:
@@ -76,8 +81,3 @@ def run_research_pipeline(topic: str) -> dict:
     print("\n critic report \n", state["feedback"])
 
     return state
-
-
-if __name__ == "__main__":
-    topic = input("\n Enter a research topic : ")
-    run_research_pipeline(topic)
