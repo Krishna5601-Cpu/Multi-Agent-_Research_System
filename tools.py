@@ -16,7 +16,7 @@ tavily = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 @tool
 def web_search(query: str) -> str:
-    """ "Search the web for recent, relevent and reliable information on topic. Returns Title, Urls and Snippets"""
+    """Search the web for recent, relevant and reliable information on a topic. Returns titles, URLs and snippets."""
 
     results = tavily.search(query=query, max_results=5)
 
@@ -24,10 +24,10 @@ def web_search(query: str) -> str:
 
     for r in results["results"]:
         out.append(
-            f"Title : {r['title']}\n URL: {r['url']} \n Content: {r['content'[:300]]} \n"
+            f"Title: {r['title']}\nURL: {r['url']}\nContent: {r['content'][:300]}\n"
         )
 
-        return "\n------\n".join(out)
+    return "\n------\n".join(out)
 
 
 @tool
